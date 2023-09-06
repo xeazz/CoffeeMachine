@@ -19,8 +19,7 @@
 
     - Для maven: `./mvnw clean package` (если пишет Permission denied, тогда сначала выполните `chmod +x ./mvnw`).
 
-2. Запускаем процесс создания образа Docker:    
-    `docker build -t coffee_machine:latest .`
+2. Запускаем процесс создания образа Docker: `docker build -t coffee_machine:latest .`
 3. Развертываем сервисы веб-приложения: `docker-compose up -d `
 
 ## Управление
