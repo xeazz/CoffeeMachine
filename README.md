@@ -24,7 +24,7 @@
 
 ## Управление
 
-[SpringDoc OpenAPI](https://localhost:8080/swagger-ui.html "Открой меня :)")
+Управление осуществлять с помощью этой ссылки: [SpringDoc OpenAPI](http://localhost:8080/swagger-ui.html "Открой меня :)")
 
 
 | Метод        | Описание                  |Команда|
