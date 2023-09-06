@@ -43,7 +43,6 @@ public class AppController {
     }
 
     @Operation(method = "POST", summary = "Stop coffee machine")
-    @PostMapping("/stop")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "OK: coffee machine is OFF",
                     content = {@Content(mediaType = "application/json",
@@ -52,6 +51,7 @@ public class AppController {
                     content = @Content),
             @ApiResponse(responseCode = "500", description = "Internal Server Error: Server has broken",
                     content = @Content)})
+    @PostMapping("/stop")
     public ResponseEntity<SuccessResponse> stop() {
         return ResponseEntity.ok(appService.stop(Status.INACTIVE));
     }
