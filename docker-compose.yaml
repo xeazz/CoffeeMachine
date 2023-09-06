@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+
+  server:
+    image: coffee_machine
+    container_name: 'coffee-machine-server'
+    build: ./
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/postgres
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1111
+      SPRING_JPA_HIBERNATE_DDL_AUTO: create
+      SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA:
+      SPRING_LIQUIBASE_URL: jdbc:postgresql://database:5432/postgres
+      SPRING_LIQUIBASE_USER: root
+      SPRING_LIQUIBASE_PASSWORD: 1111
+  database:
+    image: postgres
+    container_name: 'postgres'
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1111
+      POSTGRES_DB: postgres
+
